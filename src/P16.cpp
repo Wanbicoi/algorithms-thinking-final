@@ -1,8 +1,3 @@
-/**
- *    author:    hungt1
- *    created:   30-12-2022   20:53:49
-**/
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,6 +13,12 @@ int main()
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+    cout << endl;
+    for(auto row: adj){
+        for(int num: row)
+            cout << num << " ";
+        cout << endl;
+    }
 
     long long ans = 0;
     vector<int> sub(n, 0);
@@ -29,8 +30,9 @@ int main()
             sub[u] += sub[v];
         }
         ans += 1LL * sub[u] * (n - sub[u]);
+        cout << 1LL * sub[u] * (n - sub[u]) << " : " << u+1 << " : " << sub[u]<< endl;
     };
-
+    cout << endl;
     dfs(0, -1);
     cout << ans << '\n';
     return 0;

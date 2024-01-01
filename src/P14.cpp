@@ -1,8 +1,3 @@
-/**
- *    author:    hungt1
- *    created:   01-01-2023   10:57:24
-**/
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,10 +21,6 @@ long long area(vector<Point> a){
     return ans;
 }
 
-long long area(Point a, Point b, Point c){
-    return abs((b.x - a.x) * (b.y + a.y) + (c.x - b.x) * (c.y + b.y) + (a.x - c.x) * (a.y + c.y));
-}
-
 int main()
 {
     fastio;
@@ -40,7 +31,7 @@ int main()
     }
 
     long long total = area(a);
-    
+
     int j = 1; 
     int first = 0, second = 1;
     long long cur = 0, diff = INF;
@@ -51,7 +42,7 @@ int main()
                 first = i;
                 second = j;
             }
-            cur += area(a[i], a[j], a[(j + 1) % n]);
+            cur += area({a[i], a[j], a[(j + 1) % n]});
             j = (j + 1) % n;
         }
         if (abs(total - 2 * cur) < diff){
@@ -59,7 +50,7 @@ int main()
             first = i;
             second = j;
         }
-        cur -= area(a[i], a[(i + 1) % n], a[j]);
+        cur -= area({a[i], a[(i + 1) % n], a[j]});
     } 
     cout << first + 1 << ' ' << second + 1 << '\n';
     return 0;
