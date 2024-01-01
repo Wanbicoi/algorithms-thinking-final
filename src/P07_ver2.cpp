@@ -16,18 +16,17 @@ int main()
     int total = 0;
     int max_left = INT_MIN, max_right = INT_MIN;
     int left = 0, right = n - 1;
-    while(left <= right){
+    while(left < right){
         max_left = max(max_left, arr[left]);
         max_right = max(max_right, arr[right]);
-
-        if(max_right > max_left)
+        if(max_left < max_right)
         {
-            total += min(arr[left], max_left);
+            total += max_left - arr[left];
             left++;
         }
         else{
-            total += min(arr[right], max_right);
-            right++;
+            total += max_right - arr[right];
+            right--;
         }
 
     }
