@@ -1,8 +1,3 @@
-/**
- *    author:    hungt1
- *    created:   01-01-2023   11:50:39
-**/
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -51,7 +46,7 @@ int main()
             cnt++;
         }
         y %= fact[n - i - 1];
-    }   
+    }
     for (int x : res) cout << x << ' '; cout << '\n';
     return 0;
 }

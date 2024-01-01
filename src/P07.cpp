@@ -1,8 +1,3 @@
-/**
- *    author:    hungt1
- *    created:   30-12-2022   11:23:49
-**/
-
 #include <bits/stdc++.h>
 using namespace std;
 
