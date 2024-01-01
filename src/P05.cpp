@@ -1,8 +1,3 @@
-/**
- *    author:    hungt1
- *    created:   30-12-2022   11:06:49
-**/
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -41,7 +36,7 @@ int main()
 
     for (int i = 1; i <= n - m + 1; i++){
         if (getHash(i, i + m - 1) == tHash){
-            cout << i << ' ';
+            cout << i - 1 << ' ';
         }
     }
     cout << '\n';
